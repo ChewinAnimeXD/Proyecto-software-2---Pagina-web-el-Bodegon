@@ -1,0 +1,46 @@
+CREATE DATABASE bodegon;
+
+use bodegon;
+
+CREATE TABLE usuarios(
+id_usuario int(20),
+nombre varchar(100),
+apellidos varchar(100),
+f_nacimiento date,
+sexo varchar(10),
+correo varchar(100),
+constraseña varchar(100)
+);
+
+CREATE TABLE comentatios(
+id_comentario int(20),
+fecha date,
+comentario varchar(200),
+calificacion int(5),
+id_usuario int(20),
+FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
+);
+
+CREATE TABLE reservaciones_mesa(
+id_reservacion int(20),
+f_reservacion date,
+numero_mesa int(20),
+ciudad varchar(50),
+establecimiento varchar(50)
+);
+
+CREATE TABLE reservaciones_establecimiento(
+id_reservacion int(20),
+f_reservacion date,
+ciudad varchar(50),
+establecimiento varchar(50)
+);
+
+CREATE TABLE establecimiento(
+id_establecimiento int(20),
+ciudad varchar(50),
+telefono varchar(50),
+direccion varchar(50),
+cant_mesas int(20),
+horario varchar(100),
+);
