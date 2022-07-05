@@ -1,0 +1,18 @@
+body{
+
+    background: url(images\bg_4.jpg);
+}
+    .div{
+    font-family: sans-serif;
+    width: 100%;
+    text-transform: uppercase;
+    background:black ;
+  
+    background-size: cover;
+    padding-top:200px
+}
+.logi{
+    width: 28%;
+    margin: 0 auto;
+
+}
