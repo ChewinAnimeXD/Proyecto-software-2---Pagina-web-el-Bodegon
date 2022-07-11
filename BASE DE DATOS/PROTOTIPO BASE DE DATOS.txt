@@ -21,26 +21,30 @@ id_usuario int(20),
 FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
 );
 
-CREATE TABLE reservaciones_mesa(
-id_reservacion int(20),
-f_reservacion date,
-numero_mesa int(20),
-ciudad varchar(50),
-establecimiento varchar(50)
-);
-
-CREATE TABLE reservaciones_establecimiento(
-id_reservacion int(20),
-f_reservacion date,
-ciudad varchar(50),
-establecimiento varchar(50)
-);
-
 CREATE TABLE establecimiento(
 id_establecimiento int(20),
 ciudad varchar(50),
 telefono varchar(50),
 direccion varchar(50),
 cant_mesas int(20),
-horario varchar(100),
+horario varchar(100)
 );
+
+CREATE TABLE reservaciones_mesa(
+id_reservacion int(20),
+f_reservacion date,
+numero_mesa int(20),
+ciudad varchar(50),
+id_establecimiento varchar(50),
+FOREIGN KEY (id_establecimiento) REFERENCES establecimiento (id_establecimiento)
+);
+
+CREATE TABLE reservaciones_establecimiento(
+id_reservacion int(20),
+f_reservacion date,
+ciudad varchar(50),
+id_establecimiento varchar(50),
+FOREIGN KEY (id_establecimiento) REFERENCES establecimiento (id_establecimiento)
+);
+
+
